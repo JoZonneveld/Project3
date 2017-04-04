@@ -1,6 +1,12 @@
+<<<<<<< HEAD
 Joost1
 
 Billy
+=======
+Joost
+ 2
+Kutbilly
+>>>>>>> master
 Joost03
 
 Amir
