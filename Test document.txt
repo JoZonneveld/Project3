@@ -1,8 +1,11 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 Joost1
 
 Billy
 =======
+=======
+>>>>>>> master
 Joost
  2
 Kutbilly
