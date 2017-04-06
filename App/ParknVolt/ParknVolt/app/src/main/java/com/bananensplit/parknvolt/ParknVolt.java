@@ -1,5 +1,6 @@
 package com.bananensplit.parknvolt;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -19,7 +20,6 @@ public class ParknVolt extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener, View.OnClickListener{
 
     Button button1;
-    Button button2;
     TextView result;
 
     @Override
@@ -30,7 +30,6 @@ public class ParknVolt extends AppCompatActivity
         setSupportActionBar(toolbar);
 
         button1 = (Button) findViewById(R.id.button1);
-        button2 = (Button) findViewById(R.id.button2);
         result = (TextView) findViewById(R.id.result);
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
@@ -43,7 +42,6 @@ public class ParknVolt extends AppCompatActivity
         navigationView.setNavigationItemSelectedListener(this);
 
         button1.setOnClickListener(this);
-        button2.setOnClickListener(this);
     }
 
     @Override
@@ -101,13 +99,9 @@ public class ParknVolt extends AppCompatActivity
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.button1:
-                result.setText("Hallo world");
+                Intent i = new Intent(ParknVolt.this, basic.class);
+                startActivity(i);
                 break;
-            case R.id.button2:
-                result.setText("");
-                break;
-
-
         }
 
     }
