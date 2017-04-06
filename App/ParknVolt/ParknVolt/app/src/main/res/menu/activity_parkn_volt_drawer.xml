@@ -9,7 +9,7 @@
                 android:title="Zoek parkeerplaatsen" />
             <item
                 android:id="@+id/charging_points"
-                android:icon="@drawable/ic_charging_point"
+                android:icon="@drawable/ic_search_black_48px"
                 android:title="Zoek Oplaadpunten" />
 
         </menu>
