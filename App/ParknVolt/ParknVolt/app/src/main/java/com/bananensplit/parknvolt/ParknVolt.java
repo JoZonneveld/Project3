@@ -12,9 +12,15 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.Button;
+import android.widget.TextView;
 
 public class ParknVolt extends AppCompatActivity
-        implements NavigationView.OnNavigationItemSelectedListener {
+        implements NavigationView.OnNavigationItemSelectedListener, View.OnClickListener{
+
+    Button button1;
+    Button button2;
+    TextView result;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -22,6 +28,10 @@ public class ParknVolt extends AppCompatActivity
         setContentView(R.layout.activity_parkn_volt);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+
+        button1 = (Button) findViewById(R.id.button1);
+        button2 = (Button) findViewById(R.id.button2);
+        result = (TextView) findViewById(R.id.result);
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
@@ -31,6 +41,9 @@ public class ParknVolt extends AppCompatActivity
 
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
+
+        button1.setOnClickListener(this);
+        button2.setOnClickListener(this);
     }
 
     @Override
@@ -82,5 +95,20 @@ public class ParknVolt extends AppCompatActivity
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
         return true;
+    }
+
+    @Override
+    public void onClick(View v) {
+        switch (v.getId()) {
+            case R.id.button1:
+                result.setText("Hallo world");
+                break;
+            case R.id.button2:
+                result.setText("");
+                break;
+
+
+        }
+
     }
 }
