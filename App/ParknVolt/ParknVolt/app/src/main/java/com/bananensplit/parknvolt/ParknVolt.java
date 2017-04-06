@@ -57,13 +57,6 @@ public class ParknVolt extends AppCompatActivity
     }
 
     @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.parkn_volt, menu);
-        return true;
-    }
-
-    @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         // Handle action bar item clicks here. The action bar will
         // automatically handle clicks on the Home/Up button, so long
@@ -83,13 +76,12 @@ public class ParknVolt extends AppCompatActivity
         int id = item.getItemId();
 
         if (id == R.id.parking) {
-            // Handle the camera action
-        } else if (id == R.id.parking) {
-
-        } else if (id == R.id.charging_points) {
-
+            result.setText("Zoek parkeerplaatsen");
+        }
+        else if (id == R.id.charging_points) {
+            result.setText("Zoek oplaadpunten");
         } else if (id == R.id.settings) {
-
+            result.setText("Instellingen");
         }
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
