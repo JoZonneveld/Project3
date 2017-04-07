@@ -1,5 +1,6 @@
 package com.bananensplit.parknvolt;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -21,6 +22,7 @@ public class ParknVolt extends AppCompatActivity
     Button button1;
     Button button2;
     TextView result;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -46,6 +48,8 @@ public class ParknVolt extends AppCompatActivity
         button2.setOnClickListener(this);
     }
 
+    public static final String EXTRA_MESSAGE = "com.bananensplit.parknvolt.MESSAGE";
+
     @Override
     public void onBackPressed() {
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
@@ -69,6 +73,11 @@ public class ParknVolt extends AppCompatActivity
         return super.onOptionsItemSelected(item);
     }
 
+    @Override
+    public void startActivity(Intent intent) {
+        super.startActivity(intent);
+    }
+
     @SuppressWarnings("StatementWithEmptyBody")
     @Override
     public boolean onNavigationItemSelected(MenuItem item) {
@@ -81,7 +90,8 @@ public class ParknVolt extends AppCompatActivity
         else if (id == R.id.charging_points) {
             result.setText("Zoek oplaadpunten");
         } else if (id == R.id.settings) {
-            result.setText("Instellingen");
+            Intent intent = new Intent(this, Settings.class);
+            startActivity(intent);
         }
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
