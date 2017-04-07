@@ -4,7 +4,6 @@ import android.Manifest;
 import android.app.Activity;
 import android.content.Intent;
 import android.content.pm.PackageManager;
-import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -28,7 +27,6 @@ public class ParknVolt extends AppCompatActivity
 
     Button button1;
     TextView result;
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -54,8 +52,6 @@ public class ParknVolt extends AppCompatActivity
         getPermissionToReadUserLocation();
     }
 
-    public static final String EXTRA_MESSAGE = "com.bananensplit.parknvolt.MESSAGE";
-
     @Override
     public void onBackPressed() {
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
@@ -64,6 +60,13 @@ public class ParknVolt extends AppCompatActivity
         } else {
             super.onBackPressed();
         }
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        // Inflate the menu; this adds items to the action bar if it is present.
+        getMenuInflater().inflate(R.menu.parkn_volt, menu);
+        return true;
     }
 
     @Override
@@ -79,11 +82,6 @@ public class ParknVolt extends AppCompatActivity
         return super.onOptionsItemSelected(item);
     }
 
-    @Override
-    public void startActivity(Intent intent) {
-        super.startActivity(intent);
-    }
-
     @SuppressWarnings("StatementWithEmptyBody")
     @Override
     public boolean onNavigationItemSelected(MenuItem item) {
@@ -91,14 +89,13 @@ public class ParknVolt extends AppCompatActivity
         int id = item.getItemId();
 
         if (id == R.id.parking) {
-            Intent intent = new Intent(this, Parkeerplaats.class);
-            startActivity(intent);
-        }
-        else if (id == R.id.charging_points) {
-            result.setText("Zoek oplaadpunten");
+            // Handle the camera action
+        } else if (id == R.id.parking) {
+
+        } else if (id == R.id.charging_points) {
+
         } else if (id == R.id.settings) {
-            Intent intent = new Intent(this, Settings.class);
-            startActivity(intent);
+
         }
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
