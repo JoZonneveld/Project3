@@ -111,7 +111,6 @@ public class ParknVolt extends AppCompatActivity
                 startActivity(i);
                 break;
         }
-
     }
 
     //Fields
