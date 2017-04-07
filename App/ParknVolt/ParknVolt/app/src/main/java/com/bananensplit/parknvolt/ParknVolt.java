@@ -99,10 +99,12 @@ public class ParknVolt extends AppCompatActivity
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.button1:
-                Intent i = new Intent(ParknVolt.this, basic.class);
+                Intent i = new Intent(ParknVolt.this, Maps.class);
                 startActivity(i);
                 break;
         }
 
     }
+
+
 }
