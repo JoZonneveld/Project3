@@ -49,7 +49,6 @@ public class ParknVolt extends AppCompatActivity
 
         button1.setOnClickListener(this);
 
-        getPermissionToReadUserLocation();
     }
 
     @Override
@@ -111,17 +110,6 @@ public class ParknVolt extends AppCompatActivity
                 startActivity(i);
                 break;
         }
-    }
-
-    //Fields
-    private static final int ACCESS_FINE_LOCATION_REQUEST = 1;
-
-    public void getPermissionToReadUserLocation(){
-       if(ContextCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION)
-           != PackageManager.PERMISSION_GRANTED){
-           requestPermissions(new String[]{Manifest.permission.ACCESS_FINE_LOCATION},
-                   ACCESS_FINE_LOCATION_REQUEST);
-       }
     }
 
 
