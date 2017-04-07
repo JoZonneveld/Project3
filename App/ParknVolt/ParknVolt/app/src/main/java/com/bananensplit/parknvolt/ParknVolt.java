@@ -85,7 +85,8 @@ public class ParknVolt extends AppCompatActivity
         int id = item.getItemId();
 
         if (id == R.id.parking) {
-            result.setText("Zoek parkeerplaatsen");
+            Intent intent = new Intent(this, Parkeerplaats.class);
+            startActivity(intent);
         }
         else if (id == R.id.charging_points) {
             result.setText("Zoek oplaadpunten");
