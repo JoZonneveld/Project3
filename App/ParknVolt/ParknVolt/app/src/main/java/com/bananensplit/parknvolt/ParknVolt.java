@@ -1,9 +1,14 @@
 package com.bananensplit.parknvolt;
 
+import android.Manifest;
+import android.app.Activity;
 import android.content.Intent;
+import android.content.pm.PackageManager;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
+import android.support.v4.app.ActivityCompat;
+import android.support.v4.content.ContextCompat;
 import android.view.View;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
@@ -15,6 +20,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class ParknVolt extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener, View.OnClickListener{
@@ -42,6 +48,8 @@ public class ParknVolt extends AppCompatActivity
         navigationView.setNavigationItemSelectedListener(this);
 
         button1.setOnClickListener(this);
+
+        getPermissionToReadUserLocation();
     }
 
     @Override
@@ -104,6 +112,17 @@ public class ParknVolt extends AppCompatActivity
                 break;
         }
 
+    }
+
+    //Fields
+    private static final int ACCESS_FINE_LOCATION_REQUEST = 1;
+
+    public void getPermissionToReadUserLocation(){
+       if(ContextCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION)
+           != PackageManager.PERMISSION_GRANTED){
+           requestPermissions(new String[]{Manifest.permission.ACCESS_FINE_LOCATION},
+                   ACCESS_FINE_LOCATION_REQUEST);
+       }
     }
 
 
