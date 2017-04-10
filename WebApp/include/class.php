@@ -13,7 +13,12 @@
 		}
 		// Insert Data
 
-		// get Data 
+		// get Data
+        function getAll()
+        {
+
+        }
+
         function getPaal(){
             $this->sql = mysqli_query($this->conn, "SELECT DISTINCT id, Adres, `Longitude`, `Latitude` FROM `paal` ORDER BY Adres");
 

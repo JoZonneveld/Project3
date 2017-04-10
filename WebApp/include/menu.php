@@ -14,9 +14,15 @@
                             <!-- Collect the nav links, forms, and other content for toggling -->
                             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                                 <ul class="nav navbar-nav">
-                                <li>
-                                    <a href="index.php?page=home">Home</a>
-                                </li>
+                                    <li>
+                                        <a href="index.php?page=home">Home</a>
+                                    </li>
+                                    <li>
+                                        <a href="index.php?page=paal">Oplaad punten</a>
+                                    </li>
+                                    <li>
+                                        <a href="index.php?page=park">Parkeer garages</a>
+                                    </li>
         			            
         			        </ul>
         			    </div>

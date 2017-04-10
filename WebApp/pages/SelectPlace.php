@@ -34,6 +34,19 @@ else if($kind == "Park")
 <div id="map" style="width:100%;height:400px;"></div>
 
 <script>
+    var iconBase = 'https://maps.google.com/mapfiles/kml/shapes/';
+    var icons = {
+        parking: {
+            icon: iconBase + 'parking_lot_maps.png'
+        },
+        library: {
+            icon: iconBase + 'library_maps.png'
+        },
+        info: {
+            icon: iconBase + 'info-i_maps.png'
+        }
+    };
+
     var long1 = "4.4837392";
     var lat1 = "51.9365139";
 
@@ -41,17 +54,16 @@ else if($kind == "Park")
     var lat = "<?php print $lat ?>";
 
     var myCenter = new google.maps.LatLng(long,lat);
-    var myCenter1 = new google.maps.LatLng(long1,lat1);
     function myMap() {
         var myCenter = new google.maps.LatLng(lat,long);
         var mapCanvas = document.getElementById("map");
         var mapOptions = {center: myCenter, zoom: 16};
         var map = new google.maps.Map(mapCanvas, mapOptions);
-        var marker = new google.maps.Marker({position:myCenter});
+        var marker = new google.maps.Marker({position:myCenter} );
         marker.setMap(map);
-        var marker1 = new google.maps.Marker({position:myCenter1});
-        marker1.setMap(map);
     }
+
+
 
 </script>
 
