@@ -12,15 +12,22 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="DBConverter.php" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/DBConverter.php">
+      <file leaf-file-name="SelectPlace.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/pages/SelectPlace.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="148">
-              <caret line="16" column="43" lean-forward="true" selection-start-line="14" selection-start-column="0" selection-end-line="16" selection-end-column="43" />
-              <folding>
-                <marker date="1491815415928" expanded="true" signature="170:210" ph="SELECT id, L... paal" />
-                <marker date="1491815415928" expanded="true" signature="1497:1575" ph="UPDATE paal " />
-              </folding>
+            <state relative-caret-position="620">
+              <caret line="46" column="26" lean-forward="false" selection-start-line="46" selection-start-column="26" selection-end-line="46" selection-end-column="26" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="home.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/pages/home.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="21">
+              <caret line="1" column="18" lean-forward="false" selection-start-line="1" selection-start-column="18" selection-end-line="1" selection-end-column="18" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -39,10 +46,10 @@
         <option value="$PROJECT_DIR$/pages/selectedPark.php" />
         <option value="$PROJECT_DIR$/pages/park.php" />
         <option value="$PROJECT_DIR$/test.php" />
-        <option value="$PROJECT_DIR$/pages/SelectPlace.php" />
         <option value="$PROJECT_DIR$/include/class.php" />
-        <option value="$PROJECT_DIR$/pages/home.php" />
         <option value="$PROJECT_DIR$/delete.php" />
+        <option value="$PROJECT_DIR$/pages/home.php" />
+        <option value="$PROJECT_DIR$/pages/SelectPlace.php" />
       </list>
     </option>
   </component>
@@ -207,12 +214,12 @@
       <workItem from="1491680217010" duration="138000" />
       <workItem from="1491815473186" duration="2322000" />
       <workItem from="1491827301849" duration="370000" />
-      <workItem from="1491827689148" duration="2783000" />
+      <workItem from="1491827689148" duration="4626000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="15182000" />
+    <option name="totallyTimeSpent" value="17025000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-9" y="-9" width="1938" height="1060" extended-state="6" />
@@ -515,12 +522,23 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/pages/SelectPlace.php">
+    <entry file="file://$PROJECT_DIR$/DBConverter.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1008">
-          <caret line="48" column="0" lean-forward="true" selection-start-line="48" selection-start-column="0" selection-end-line="48" selection-end-column="0" />
+        <state relative-caret-position="525">
+          <caret line="55" column="13" lean-forward="true" selection-start-line="55" selection-start-column="13" selection-end-line="55" selection-end-column="13" />
           <folding>
-            <element signature="n#style#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <marker date="1491815415928" expanded="true" signature="170:210" ph="SELECT id, L... paal" />
+            <marker date="1491815415928" expanded="true" signature="1497:1575" ph="UPDATE paal " />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/delete.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="336">
+          <caret line="16" column="89" lean-forward="false" selection-start-line="16" selection-start-column="89" selection-end-line="16" selection-end-column="89" />
+          <folding>
+            <marker date="1491833231874" expanded="true" signature="88:121" ph="SELECT * FRO... paal" />
           </folding>
         </state>
       </provider>
@@ -541,26 +559,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/delete.php">
+    <entry file="file://$PROJECT_DIR$/pages/SelectPlace.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="504">
-          <caret line="24" column="32" lean-forward="true" selection-start-line="24" selection-start-column="32" selection-end-line="24" selection-end-column="32" />
-          <folding>
-            <marker date="1491831403872" expanded="true" signature="88:121" ph="SELECT * FRO... paal" />
-            <marker date="1491831403872" expanded="true" signature="473:500" ph="DELETE FROM " />
-            <marker date="1491831403872" expanded="true" signature="473:506" ph="DELETE FROM " />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/DBConverter.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="148">
-          <caret line="16" column="43" lean-forward="true" selection-start-line="14" selection-start-column="0" selection-end-line="16" selection-end-column="43" />
-          <folding>
-            <marker date="1491815415928" expanded="true" signature="170:210" ph="SELECT id, L... paal" />
-            <marker date="1491815415928" expanded="true" signature="1497:1575" ph="UPDATE paal " />
-          </folding>
+        <state relative-caret-position="620">
+          <caret line="46" column="26" lean-forward="false" selection-start-line="46" selection-start-column="26" selection-end-line="46" selection-end-column="26" />
+          <folding />
         </state>
       </provider>
     </entry>
