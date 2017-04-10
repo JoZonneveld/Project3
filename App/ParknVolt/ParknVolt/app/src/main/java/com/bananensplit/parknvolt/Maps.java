@@ -44,7 +44,7 @@ public class Maps extends AppCompatActivity implements OnMapReadyCallback {
     public void onMapReady(GoogleMap googleMap) {
         mMap = googleMap;
 
-        // Add a marker in Sydney and move the camera
+        // Add a marker in Rotterdam and move the camera
         LatLng rotterdam = new LatLng(51.917410, 4.483888);
         mMap.addMarker(new MarkerOptions().position(rotterdam).title("Marker in Sydney"));
         mMap.moveCamera(CameraUpdateFactory.newLatLng(rotterdam));
