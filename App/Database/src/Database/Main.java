@@ -17,7 +17,7 @@ public class Main {
             System.out.println("Opened database successfully");
 
             stmt = c.createStatement();
-            ResultSet rs = stmt.executeQuery( "SELECT * FROM paal;" );
+            ResultSet rs = stmt.executeQuery( "SELECT DISTINCT Adres, `Longitude`, `Latitude` FROM `paal` ORDER BY Adres;" );
             while ( rs.next() ) {
 
                 String Adres = rs.getString("Adres");

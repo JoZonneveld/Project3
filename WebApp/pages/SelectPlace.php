@@ -23,10 +23,10 @@ if($kind == "paal")
 else if($kind == "Park")
 {
     $db->getSinglePark($id);
+    $long = $db->getLongPark($id);
+    $lat = $db->getLatPark($id);
 }
 ?>
-
-
 
 <!DOCTYPE html>
 <html>
@@ -50,11 +50,6 @@ else if($kind == "Park")
 </script>
 
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBJT7Y3hhxrM8kj7bbtWNQt8mmdPDmlxOg&callback=myMap"></script>
-<!--
-To use this code on your website, get a free API key from Google.
-Read more at: https://www.w3schools.com/graphics/google_maps_basic.asp
--->
-
 </body>
 </html>
 
