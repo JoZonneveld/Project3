@@ -1,14 +1,7 @@
 package com.bananensplit.parknvolt;
 
-import android.Manifest;
-import android.app.Activity;
 import android.content.Intent;
-import android.content.pm.PackageManager;
 import android.os.Bundle;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
-import android.support.v4.app.ActivityCompat;
-import android.support.v4.content.ContextCompat;
 import android.view.View;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
@@ -20,7 +13,6 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.Button;
 import android.widget.TextView;
-import android.widget.Toast;
 
 public class ParknVolt extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener, View.OnClickListener{
@@ -108,6 +100,15 @@ public class ParknVolt extends AppCompatActivity
             case R.id.button1:
                 Intent i = new Intent(ParknVolt.this, Maps.class);
                 startActivity(i);
+                break;
+
+            case R.id.button2:
+                Intent i2 = new Intent(ParknVolt.this, basic.class);
+                startActivity(i2);
+                break;
+            case R.id.button3:
+                Intent i3 = new Intent(ParknVolt.this, Tabs.class);
+                startActivity(i3);
                 break;
         }
     }
