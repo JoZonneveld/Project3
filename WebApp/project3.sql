@@ -3,9 +3,9 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Gegenereerd op: 10 apr 2017 om 15:39
--- Serverversie: 10.1.8-MariaDB
--- PHP-versie: 5.6.14
+-- Gegenereerd op: 10 apr 2017 om 22:45
+-- Serverversie: 10.1.19-MariaDB
+-- PHP-versie: 7.0.13
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
@@ -303,7 +303,7 @@ ALTER TABLE `park`
 -- AUTO_INCREMENT voor een tabel `paal`
 --
 ALTER TABLE `paal`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5543;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5542;
 --
 -- AUTO_INCREMENT voor een tabel `park`
 --
