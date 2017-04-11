@@ -1,3 +1,20 @@
+<?php
+require_once 'Mobile/Mobile_Detect.php';
+$detect = new Mobile_Detect;
+
+
+if (!$detect->isMobile() ) {
+    echo '<meta name="viewport" content="initial-scale=0.65,minimum-scale=0.5,maximum-scale=0.5,width=device-width,height=device-height,target-densitydpi=device-dpi,user-scalable=yes" /> ';
+} elseif( $detect->isiOS() ){
+    echo '<meta name="viewport" content="width=device-width, initial-scale=0.75, maximum-scale=12.0, minimum-scale=.25, user-scalable=yes"/> ';
+} else {
+    echo '<meta name="viewport" content="width=device-width, initial-scale=0.80, maximum-scale=12.0, minimum-scale=.25, user-scalable=yes"/> ';
+
+    //echo '<meta name="viewport" content="initial-scale=0.65,minimum-scale=0.5,maximum-scale=0.5,width=device-width,height=device-height,target-densitydpi=device-dpi,user-scalable=yes" />
+    // <link rel="stylesheet" href="css/android.css" />';
+}
+?>
+
 <!DOCTYPE html>
 <html>
 <head>
