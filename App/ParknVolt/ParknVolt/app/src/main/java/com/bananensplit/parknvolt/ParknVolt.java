@@ -1,6 +1,7 @@
 package com.bananensplit.parknvolt;
 
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
 import android.support.design.widget.NavigationView;
@@ -11,24 +12,26 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.webkit.WebSettings;
+import android.webkit.WebView;
 import android.widget.Button;
 import android.widget.TextView;
 
 public class ParknVolt extends AppCompatActivity
-        implements NavigationView.OnNavigationItemSelectedListener, View.OnClickListener{
+        implements NavigationView.OnNavigationItemSelectedListener {
 
     Button button1;
     TextView result;
+    String page = "http://jprojects.eu/project3/maps/all.php";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_parkn_volt);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-
-        button1 = (Button) findViewById(R.id.button1);
-        result = (TextView) findViewById(R.id.result);
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
@@ -39,8 +42,12 @@ public class ParknVolt extends AppCompatActivity
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
 
-        button1.setOnClickListener(this);
+        WebView webView = new WebView(this);
+        webView = (WebView) findViewById(R.id.webview1);
+        WebSettings webSettings = webView.getSettings();
+        webSettings.setJavaScriptEnabled(true);
 
+        webView.loadUrl(page);
     }
 
     @Override
@@ -73,6 +80,15 @@ public class ParknVolt extends AppCompatActivity
         return super.onOptionsItemSelected(item);
     }
 
+    public void getPage(String page) {
+        WebView webView = new WebView(this);
+        webView = (WebView) findViewById(R.id.webview1);
+        WebSettings webSettings = webView.getSettings();
+        webSettings.setJavaScriptEnabled(true);
+
+        webView.loadUrl(page);
+    }
+
     @SuppressWarnings("StatementWithEmptyBody")
     @Override
     public boolean onNavigationItemSelected(MenuItem item) {
@@ -80,38 +96,15 @@ public class ParknVolt extends AppCompatActivity
         int id = item.getItemId();
 
         if (id == R.id.parking) {
-            // Handle the camera action
-        } else if (id == R.id.parking) {
-
+            getPage("http://jprojects.eu/project3/maps/park.php");
         } else if (id == R.id.charging_points) {
-
+            getPage("http://jprojects.eu/project3/maps/paal.php");
         } else if (id == R.id.settings) {
-
+            getPage("http://jprojects.eu/project3/maps/all.php");
         }
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
         return true;
     }
-
-    @Override
-    public void onClick(View v) {
-        switch (v.getId()) {
-            case R.id.button1:
-                Intent i = new Intent(ParknVolt.this, Maps.class);
-                startActivity(i);
-                break;
-
-            case R.id.button2:
-                Intent i2 = new Intent(ParknVolt.this, basic.class);
-                startActivity(i2);
-                break;
-            case R.id.button3:
-                Intent i3 = new Intent(ParknVolt.this, Tabs.class);
-                startActivity(i3);
-                break;
-        }
-    }
-
-
 }
