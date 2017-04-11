@@ -7,6 +7,8 @@ import android.support.v4.app.FragmentActivity;
 import android.os.Bundle;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
+import android.webkit.WebSettings;
+import android.webkit.WebView;
 
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
@@ -19,6 +21,8 @@ import com.google.android.gms.maps.model.MarkerOptions;
 public class Maps extends AppCompatActivity implements OnMapReadyCallback {
 
     private GoogleMap mMap;
+    private static final int ACCESS_FINE_LOCATION_REQUEST = 1;
+    private WebView mWebView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,7 +31,13 @@ public class Maps extends AppCompatActivity implements OnMapReadyCallback {
         // Obtain the SupportMapFragment and get notified when the map is ready to be used.
         SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager()
                 .findFragmentById(R.id.map);
-        mapFragment.getMapAsync(this);
+
+        mWebView = (WebView) findViewById(R.id.webview);
+
+        WebSettings webSettings = mWebView.getSettings();
+        webSettings.setJavaScriptEnabled(true);
+
+        mWebView.loadUrl("http://jprojects.eu/project3/maps/all.php");
     }
 
 
@@ -46,11 +56,16 @@ public class Maps extends AppCompatActivity implements OnMapReadyCallback {
 
         // Add a marker in Rotterdam and move the camera
         LatLng rotterdam = new LatLng(51.917410, 4.483888);
-        mMap.addMarker(new MarkerOptions().position(rotterdam).title("Marker in Sydney"));
-        mMap.moveCamera(CameraUpdateFactory.newLatLng(rotterdam));
-        getPermissionToReadUserLocation();
-        if (ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
+        mMap.addMarker(new MarkerOptions().position(rotterdam).title("Marker in Rotterdam"));
+
+
+        //mMap.moveCamera(CameraUpdateFactory.newLatLng(rotterdam));
+        //getPermissionToReadUserLocation();
+
+
+        if (ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
             // TODO: Consider calling
+            requestPermissions(new String[]{Manifest.permission.ACCESS_FINE_LOCATION}, ACCESS_FINE_LOCATION_REQUEST);
             //    ActivityCompat#requestPermissions
             // here to request the missing permissions, and then overriding
             //   public void onRequestPermissionsResult(int requestCode, String[] permissions,
@@ -62,18 +77,12 @@ public class Maps extends AppCompatActivity implements OnMapReadyCallback {
         mMap.setMyLocationEnabled(true);
 
         LatLngBounds rdam = new LatLngBounds(new LatLng(51.846323, 4.369726), new LatLng(51.991374, 4.595633));
-        mMap.moveCamera(CameraUpdateFactory.newLatLngBounds(rdam, 0));
+        mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(rdam.getCenter(), 13));
     }
-    //Fields
-    private static final int ACCESS_FINE_LOCATION_REQUEST = 1;
-    //Vraagt permissie om de gebruiker's locatie te lezen
-    public void getPermissionToReadUserLocation(){
-        if(ContextCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION)
-                != PackageManager.PERMISSION_GRANTED){
-            requestPermissions(new String[]{Manifest.permission.ACCESS_FINE_LOCATION},
-                    ACCESS_FINE_LOCATION_REQUEST);
-
-        }
-    }
-
+//    //Vraagt permissie om de gebruiker's locatie te lezen
+//    public void getPermissionToReadUserLocation(){
+//        if(ContextCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION)
+//                != PackageManager.PERMISSION_GRANTED){
+//            requestPermissions(new String[]{Manifest.permission.ACCESS_FINE_LOCATION},
+//                    ACCESS_FINE_LOCATION_REQUEST);
 }

@@ -24,4 +24,7 @@
 
     <string name="action_share">Share</string>
     <string name="action_reply">Reply</string>
+    <string name="title_test_list">Items</string>
+    <string name="title_test_detail">Test Detail</string>
+    <string name="title_activity_test">test</string>
 </resources>
