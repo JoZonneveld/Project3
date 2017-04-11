@@ -1,10 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    <title>Google Maps Multiple Markers</title>
+    <script src="http://maps.google.com/maps/api/js?key=AIzaSyBJT7Y3hhxrM8kj7bbtWNQt8mmdPDmlxOg&sensor=false"
+            type="text/javascript"></script>
+    <script src=""></script>
+</head>
+<body>
+<div id="map" style="width:100%;height:400px;"></div>
+
 <script>
     var locations = [ ];
 </script>
 
 
 <script type="text/javascript">
-    locations.push(['<?= $adres[1] ?>', "<?= $lat[1] ?>", "<?= $long[1] ?>", 1)
+    locations.push(['Wijnhaven 107', "51.9171772", "4.4839879", 1])
+
+
     var map = new google.maps.Map(document.getElementById('map'), {
         zoom: 13,
         center: new google.maps.LatLng(51.9244201, 4.4777325),

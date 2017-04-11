@@ -6,8 +6,8 @@
 
 		function __construct()
 		{
-            $this->conn = mysqli_connect("localhost","root","","project3");
-            //$this->conn = mysqli_connect("rdbms.strato.de","U2796862","r00tr00t","DB2796862");
+            //$this->conn = mysqli_connect("localhost","root","","project3");
+            $this->conn = mysqli_connect("rdbms.strato.de","U2796862","r00tr00t","DB2796862");
 			if (!$this->conn) {
     			die("Connection failed: " . mysqli_connect_error());
 			}
