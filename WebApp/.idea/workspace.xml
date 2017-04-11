@@ -12,11 +12,19 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+<<<<<<< Updated upstream
       <file leaf-file-name="all.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/maps/all.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="945">
               <caret line="45" column="4" lean-forward="false" selection-start-line="45" selection-start-column="4" selection-end-line="50" selection-end-column="12" />
+=======
+      <file leaf-file-name="class.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/include/class.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="17">
+              <caret line="9" column="57" lean-forward="false" selection-start-line="9" selection-start-column="57" selection-end-line="9" selection-end-column="57" />
+>>>>>>> Stashed changes
               <folding>
                 <marker date="1491900462539" expanded="true" signature="93:140" ph="SELECT id, A... paal" />
                 <marker date="1491900462539" expanded="true" signature="406:456" ph="SELECT id, A... park" />
@@ -25,6 +33,7 @@
           </provider>
         </entry>
       </file>
+<<<<<<< Updated upstream
       <file leaf-file-name="park.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/maps/park.php">
           <provider selected="true" editor-type-id="text-editor">
@@ -55,6 +64,16 @@
             <state relative-caret-position="210">
               <caret line="10" column="43" lean-forward="false" selection-start-line="10" selection-start-column="43" selection-end-line="10" selection-end-column="43" />
               <folding />
+=======
+      <file leaf-file-name="test.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/test.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="442">
+              <caret line="41" column="69" lean-forward="false" selection-start-line="41" selection-start-column="69" selection-end-line="41" selection-end-column="69" />
+              <folding>
+                <marker date="1491938396330" expanded="true" signature="90:137" ph="SELECT id, A... paal" />
+              </folding>
+>>>>>>> Stashed changes
             </state>
           </provider>
         </entry>
@@ -82,10 +101,13 @@
         <option value="$PROJECT_DIR$/index.php" />
         <option value="$PROJECT_DIR$/DBConverter.php" />
         <option value="$PROJECT_DIR$/include/class.php" />
+<<<<<<< Updated upstream
         <option value="$PROJECT_DIR$/maps/all.php" />
         <option value="$PROJECT_DIR$/maps/park.php" />
         <option value="$PROJECT_DIR$/pages/home.php" />
         <option value="$PROJECT_DIR$/maps/paal.php" />
+=======
+>>>>>>> Stashed changes
         <option value="$PROJECT_DIR$/test.php" />
       </list>
     </option>
@@ -118,7 +140,10 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+<<<<<<< Updated upstream
       <pane id="Scratches" />
+=======
+>>>>>>> Stashed changes
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -131,6 +156,7 @@
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
           </PATH>
+<<<<<<< Updated upstream
           <PATH>
             <PATH_ELEMENT>
               <option name="myItemId" value="WebApp" />
@@ -176,6 +202,12 @@
         </subPane>
       </pane>
       <pane id="Scope" />
+=======
+        </subPane>
+      </pane>
+      <pane id="Scope" />
+      <pane id="Scratches" />
+>>>>>>> Stashed changes
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -283,13 +315,18 @@
       <workItem from="1491836975064" duration="3187000" />
       <workItem from="1491853378176" duration="3747000" />
       <workItem from="1491857228176" duration="160000" />
+<<<<<<< Updated upstream
       <workItem from="1491893926141" duration="1316000" />
       <workItem from="1491896293522" duration="2757000" />
       <workItem from="1491913435795" duration="939000" />
+=======
+      <workItem from="1491938293784" duration="105000" />
+>>>>>>> Stashed changes
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
+<<<<<<< Updated upstream
     <option name="totallyTimeSpent" value="29131000" />
   </component>
   <component name="ToolWindowManager">
@@ -297,6 +334,15 @@
     <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.20729166" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+=======
+    <option name="totallyTimeSpent" value="24224000" />
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="-8" y="-8" width="1616" height="876" extended-state="6" />
+    <editor active="true" />
+    <layout>
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2075" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+>>>>>>> Stashed changes
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="PHP-CGI Server" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
@@ -349,6 +395,7 @@
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/include/class.php">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< Updated upstream
         <state relative-caret-position="168">
           <caret line="8" column="14" lean-forward="false" selection-start-line="8" selection-start-column="14" selection-end-line="8" selection-end-column="14" />
           <folding>
@@ -385,6 +432,19 @@
             <marker date="1491899962050" expanded="true" signature="2583:2618" ph="SELECT * FRO... park" />
             <marker date="1491899962050" expanded="true" signature="2952:2987" ph="SELECT * FRO... park" />
             <marker date="1491899962050" expanded="true" signature="3341:3376" ph="SELECT * FRO... park" />
+=======
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <marker date="1491857319954" expanded="true" signature="500:577" ph="SELECT DISTI... paal" />
+            <marker date="1491857319954" expanded="true" signature="1012:1047" ph="SELECT * FRO... paal" />
+            <marker date="1491857319954" expanded="true" signature="1375:1410" ph="SELECT * FRO... paal" />
+            <marker date="1491857319954" expanded="true" signature="1760:1795" ph="SELECT * FRO... paal" />
+            <marker date="1491857319954" expanded="true" signature="2110:2128" ph="SELECT * FRO... park" />
+            <marker date="1491857319954" expanded="true" signature="2583:2618" ph="SELECT * FRO... park" />
+            <marker date="1491857319954" expanded="true" signature="2952:2987" ph="SELECT * FRO... park" />
+            <marker date="1491857319954" expanded="true" signature="3341:3376" ph="SELECT * FRO... park" />
+>>>>>>> Stashed changes
           </folding>
         </state>
       </provider>
@@ -727,6 +787,7 @@
         </state>
       </provider>
     </entry>
+<<<<<<< Updated upstream
     <entry file="file://$PROJECT_DIR$/DBConverter.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="83">
@@ -757,45 +818,71 @@
             <marker date="1491899962050" expanded="true" signature="2952:2987" ph="SELECT * FRO... park" />
             <marker date="1491899962050" expanded="true" signature="3341:3376" ph="SELECT * FRO... park" />
           </folding>
+=======
+    <entry file="file://$PROJECT_DIR$/pages/park.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="2" column="0" lean-forward="false" selection-start-line="2" selection-start-column="0" selection-end-line="14" selection-end-column="1" />
+>>>>>>> Stashed changes
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/maps/all.php">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< Updated upstream
         <state relative-caret-position="945">
           <caret line="45" column="4" lean-forward="false" selection-start-line="45" selection-start-column="4" selection-end-line="50" selection-end-column="12" />
           <folding>
             <marker date="1491900462539" expanded="true" signature="93:140" ph="SELECT id, A... paal" />
             <marker date="1491900462539" expanded="true" signature="406:456" ph="SELECT id, A... park" />
           </folding>
+=======
+        <state relative-caret-position="816">
+          <caret line="48" column="0" lean-forward="false" selection-start-line="48" selection-start-column="0" selection-end-line="48" selection-end-column="0" />
+>>>>>>> Stashed changes
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/pages/home.php">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< Updated upstream
         <state relative-caret-position="284">
           <caret line="42" column="0" lean-forward="false" selection-start-line="42" selection-start-column="0" selection-end-line="42" selection-end-column="53" />
           <folding>
             <marker date="1491900568286" expanded="true" signature="43:90" ph="SELECT id, A... paal" />
             <marker date="1491900568286" expanded="true" signature="356:406" ph="SELECT id, A... park" />
           </folding>
+=======
+        <state relative-caret-position="494">
+          <caret line="106" column="22" lean-forward="false" selection-start-line="106" selection-start-column="22" selection-end-line="106" selection-end-column="22" />
+>>>>>>> Stashed changes
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/maps/park.php">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< Updated upstream
         <state relative-caret-position="798">
           <caret line="38" column="0" lean-forward="false" selection-start-line="38" selection-start-column="0" selection-end-line="38" selection-end-column="54" />
           <folding>
             <marker date="1491900526279" expanded="true" signature="92:142" ph="SELECT id, A... park" />
           </folding>
+=======
+        <state relative-caret-position="17">
+          <caret line="33" column="47" lean-forward="false" selection-start-line="33" selection-start-column="14" selection-end-line="33" selection-end-column="47" />
+>>>>>>> Stashed changes
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/maps/paal.php">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< Updated upstream
         <state relative-caret-position="357">
           <caret line="38" column="54" lean-forward="false" selection-start-line="38" selection-start-column="54" selection-end-line="38" selection-end-column="54" />
+=======
+        <state relative-caret-position="17">
+          <caret line="9" column="57" lean-forward="false" selection-start-line="9" selection-start-column="57" selection-end-line="9" selection-end-column="57" />
+>>>>>>> Stashed changes
           <folding>
             <marker date="1491900594654" expanded="true" signature="92:139" ph="SELECT id, A... paal" />
           </folding>
@@ -804,9 +891,17 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/test.php">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< Updated upstream
         <state relative-caret-position="210">
           <caret line="10" column="43" lean-forward="false" selection-start-line="10" selection-start-column="43" selection-end-line="10" selection-end-column="43" />
           <folding />
+=======
+        <state relative-caret-position="442">
+          <caret line="41" column="69" lean-forward="false" selection-start-line="41" selection-start-column="69" selection-end-line="41" selection-end-column="69" />
+          <folding>
+            <marker date="1491938396330" expanded="true" signature="90:137" ph="SELECT id, A... paal" />
+          </folding>
+>>>>>>> Stashed changes
         </state>
       </provider>
     </entry>
