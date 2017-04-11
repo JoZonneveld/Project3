@@ -111,8 +111,6 @@ input[type=submit]:hover {
 #menu
 {
 	width: 75%;
-	height: 50%;
-	background-color: gray;
 	margin-right: auto;
 	margin-left: auto;
 }

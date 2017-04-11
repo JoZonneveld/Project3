@@ -14,20 +14,6 @@ if ($db->sql->num_rows > 0)
     }
 }
 
-$db->sql = mysqli_query($db->conn, "SELECT id, AreaDesc, Longitude, Latitude FROM park");
-
-if ($db->sql->num_rows > 0)
-{
-    $i = 0;
-    while($row = $db->sql->fetch_assoc())
-    {
-        $adres1[$i] = $row['AreaDesc'];
-        $long1[$i] = $row['Longitude'];
-        $lat1[$i] = $row['Latitude'];
-        $i++;
-    }
-}
-
 ?>
 
 <!DOCTYPE html>
@@ -44,7 +30,6 @@ if ($db->sql->num_rows > 0)
 
 <script>
     var locations = [ ];
-    var locations1 = [ ];
 </script>
 
 <?php
@@ -58,21 +43,11 @@ for ($i = 0; $i < count($long); $i++)
     <?php
 }
 
-for ($i = 0; $i < count($long1); $i++)
-{
-    ?>
-    <script>
-        locations1.push(['<?= $adres1[$i] ?>', "<?= $lat1[$i] ?>", "<?= $long1[$i] ?>", <?= $i ?>])
-    </script>
-    <?php
-}
-
 ?>
 
 <script type="text/javascript">
 
-    var paal = 'img/paal1.png';
-    var park = 'img/park.png';
+    var iconBase = 'img/paal1.png';
 
 
     var map = new google.maps.Map(document.getElementById('map'), {
@@ -89,27 +64,12 @@ for ($i = 0; $i < count($long1); $i++)
         marker = new google.maps.Marker({
             position: new google.maps.LatLng(locations[i][1], locations[i][2]),
             map: map,
-            icon: paal
+            icon: iconBase
         });
 
         google.maps.event.addListener(marker, 'click', (function(marker, i) {
             return function() {
                 infowindow.setContent(locations[i][0]);
-                infowindow.open(map, marker);
-            }
-        })(marker, i));
-    }
-
-    for (i = 0; i < locations1.length; i++) {
-        marker = new google.maps.Marker({
-            position: new google.maps.LatLng(locations1[i][1], locations1[i][2]),
-            map: map,
-            icon: park
-        });
-
-        google.maps.event.addListener(marker, 'click', (function(marker, i) {
-            return function() {
-                infowindow.setContent(locations1[i][0]);
                 infowindow.open(map, marker);
             }
         })(marker, i));

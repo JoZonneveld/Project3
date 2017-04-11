@@ -23,10 +23,10 @@ if($kind == "paal")
 else if($kind == "Park")
 {
     $db->getSinglePark($id);
+    $long = $db->getLongPark($id);
+    $lat = $db->getLatPark($id);
 }
 ?>
-
-
 
 <!DOCTYPE html>
 <html>
@@ -34,6 +34,22 @@ else if($kind == "Park")
 <div id="map" style="width:100%;height:400px;"></div>
 
 <script>
+    var iconBase = 'https://maps.google.com/mapfiles/kml/shapes/';
+    var icons = {
+        parking: {
+            icon: iconBase + 'parking_lot_maps.png'
+        },
+        library: {
+            icon: iconBase + 'library_maps.png'
+        },
+        info: {
+            icon: iconBase + 'info-i_maps.png'
+        }
+    };
+
+    var long1 = "4.4837392";
+    var lat1 = "51.9365139";
+
     var long = "<?php print $long ?>";
     var lat = "<?php print $lat ?>";
 
@@ -43,18 +59,15 @@ else if($kind == "Park")
         var mapCanvas = document.getElementById("map");
         var mapOptions = {center: myCenter, zoom: 16};
         var map = new google.maps.Map(mapCanvas, mapOptions);
-        var marker = new google.maps.Marker({position:myCenter});
+        var marker = new google.maps.Marker({position:myCenter} );
         marker.setMap(map);
     }
+
+
 
 </script>
 
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBJT7Y3hhxrM8kj7bbtWNQt8mmdPDmlxOg&callback=myMap"></script>
-<!--
-To use this code on your website, get a free API key from Google.
-Read more at: https://www.w3schools.com/graphics/google_maps_basic.asp
--->
-
 </body>
 </html>
 

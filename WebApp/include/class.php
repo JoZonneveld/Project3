@@ -6,16 +6,22 @@
 
 		function __construct()
 		{
-			$this->conn = mysqli_connect("localhost","root","","project3");
+            //$this->conn = mysqli_connect("localhost","root","","project3");
+            $this->conn = mysqli_connect("rdbms.strato.de","U2796862","r00tr00t","DB2796862");
 			if (!$this->conn) {
     			die("Connection failed: " . mysqli_connect_error());
 			}
 		}
 		// Insert Data
 
-		// get Data 
+		// get Data
+        function getAll()
+        {
+
+        }
+
         function getPaal(){
-            $this->sql = mysqli_query($this->conn, "SELECT * FROM paal");
+            $this->sql = mysqli_query($this->conn, "SELECT DISTINCT id, Adres, `Longitude`, `Latitude` FROM `paal` ORDER BY Adres");
 
             if ($this->sql->num_rows > 0)
             {
@@ -76,7 +82,7 @@
             {
                 while($row = $this->sql->fetch_assoc()) {
                     ?>
-                    <a href="?page=selectedPark&id=<?php print $row["id"]?>"><?php print $row["AreaDesc"]?></a><br>
+                    <a href="?page=SelectPlace&id=?page=SelectPlace&id=<?php print $row["id"]?>&kind=Park"><?php print $row["AreaDesc"]?></a><br>
                     <?php
                 }
             }
@@ -92,6 +98,35 @@
                     echo $row["AreaDesc"]."<br>";
                 }
             }
+        }
+
+        function getLongPark($id)
+        {
+            $long = null;
+            $this->sql = mysqli_query($this->conn, "SELECT * FROM park WHERE id = '$id'");
+
+            if ($this->sql->num_rows > 0)
+            {
+                while($row = $this->sql->fetch_assoc()) {
+                    $long = $row["Longitude"];
+                }
+            }
+            return $long;
+        }
+        function getLatPark($id)
+        {
+            $lat = null;
+            $this->sql = mysqli_query($this->conn, "SELECT * FROM park WHERE id = '$id'");
+
+            if ($this->sql->num_rows > 0)
+            {
+                while($row = $this->sql->fetch_assoc()) {
+
+                    $lat =  $row["Latitude"];
+                }
+            }
+
+            return $lat;
         }
 	}
 ?>
