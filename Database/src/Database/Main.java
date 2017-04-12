@@ -27,8 +27,8 @@ public class Main {
             while ( rs.next() ) {
 
                 String Adres = rs.getString("Adres");
-                String Longitude = rs.getString("Longitude");
-                String Latitude = rs.getString("Latitude");
+                double Longitude = rs.getDouble("Longitude");
+                double Latitude = rs.getDouble("Latitude");
                 // schrijf een code die Adres, Longtitude en latitude toevoegd aan de array.
                 test.add(new String[] {Adres, Longitude, Latitude});
 
