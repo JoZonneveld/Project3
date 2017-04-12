@@ -1,26 +1,3 @@
-<?php
-
-include 'include/class.php';
-
-$db = new DB();
-
-$db->sql = mysqli_query($db->conn, "SELECT id, Adres, Longitude, Latitude FROM paal");
-
-if ($db->sql->num_rows > 0)
-{
-    $i = 0;
-    while($row = $db->sql->fetch_assoc())
-    {
-        $adres[$i] = $row['Adres'];
-        $long[$i] = $row['Longitude'];
-        $lat[$i] = $row['Latitude'];
-        $i++;
-    }
-    print $i;
-}
-
-?>
-
 <!DOCTYPE html>
 <html>
 <head>
@@ -31,28 +8,15 @@ if ($db->sql->num_rows > 0)
     <script src=""></script>
 </head>
 <body>
-<div id="map" style="width: 500px; height: 400px;"></div>
+<div id="map" style="width:100%;height:400px;"></div>
 
 <script>
     var locations = [ ];
 </script>
 
-<?php
-
-    for ($i = 0; $i < count($long); $i++)
-    {
-        ?>
-            <script>
-                locations.push(['<?= $adres[$i] ?>', "<?= $lat[$i] ?>", "<?= $long[$i] ?>", <?= $i ?>])
-            </script>
-        <?php
-    }
-
-?>
 
 <script type="text/javascript">
-
-    //locations.push(['<?= $adres[1] ?>', "<?= $lat[1] ?>", "<?= $long[1] ?>", <?= 1 ?>])
+    locations.push(['Wijnhaven 107', "51.9171772", "4.4839879", 1])
 
 
     var map = new google.maps.Map(document.getElementById('map'), {
