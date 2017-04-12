@@ -6,8 +6,8 @@
 
 		function __construct()
 		{
-            //$this->conn = mysqli_connect("localhost","root","","project3");
-            $this->conn = mysqli_connect("rdbms.strato.de","U2796862","r00tr00t","DB2796862");
+            $this->conn = mysqli_connect("localhost","root","","project3");
+            //$this->conn = mysqli_connect("rdbms.strato.de","U2796862","r00tr00t","DB2796862");
 			if (!$this->conn) {
     			die("Connection failed: " . mysqli_connect_error());
 			}
@@ -27,7 +27,8 @@
             {
                 while($row = $this->sql->fetch_assoc()) {
                     ?>
-                        <a href="?page=SelectPlace&id=<?php print $row["id"]?>&kind=paal"><?php print $row["Adres"]?></a><br>
+                    <a href="?page=SelectPlace&id=?page=SelectPlace&id=<?php print $row["id"]?>&kind=paal" class="button"><?php print $row["Adres"]?></a>
+                    <br>
                     <?php
                 }
             }
@@ -82,7 +83,8 @@
             {
                 while($row = $this->sql->fetch_assoc()) {
                     ?>
-                    <a href="?page=SelectPlace&id=?page=SelectPlace&id=<?php print $row["id"]?>&kind=Park"><?php print $row["AreaDesc"]?></a><br>
+                    <a href="?page=SelectPlace&id=?page=SelectPlace&id=<?php print $row["id"]?>&kind=Park" class="button"><?php print $row["AreaDesc"]?></a>
+                    <br>
                     <?php
                 }
             }

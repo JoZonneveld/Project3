@@ -1,3 +1,7 @@
+<!DOCTYPE html>
+<html>
+<body>
+<button class="btn btn-info" onclick="window.history.back();">Go Back</button>
 <?php
 
 if(isset($_GET['id'])) {
@@ -28,25 +32,11 @@ else if($kind == "Park")
 }
 ?>
 
-<!DOCTYPE html>
-<html>
-<body>
-<div id="map" style="width:100%;height:400px;"></div>
+
+<div id="map" style="width:100%;height:500px;"></div>
+
 
 <script>
-    var iconBase = 'https://maps.google.com/mapfiles/kml/shapes/';
-    var icons = {
-        parking: {
-            icon: iconBase + 'parking_lot_maps.png'
-        },
-        library: {
-            icon: iconBase + 'library_maps.png'
-        },
-        info: {
-            icon: iconBase + 'info-i_maps.png'
-        }
-    };
-
     var long1 = "4.4837392";
     var lat1 = "51.9365139";
 
@@ -57,10 +47,37 @@ else if($kind == "Park")
     function myMap() {
         var myCenter = new google.maps.LatLng(lat,long);
         var mapCanvas = document.getElementById("map");
-        var mapOptions = {center: myCenter, zoom: 16};
+        var mapOptions = {center: myCenter, zoom: 13};
         var map = new google.maps.Map(mapCanvas, mapOptions);
         var marker = new google.maps.Marker({position:myCenter} );
         marker.setMap(map);
+        infoWindow = new google.maps.InfoWindow;
+        if (navigator.geolocation) {
+            navigator.geolocation.getCurrentPosition(function(position) {
+                var pos = {
+                    lat: position.coords.latitude,
+                    lng: position.coords.longitude
+                };
+
+                infoWindow.setPosition(pos);
+                infoWindow.setContent('Location found.');
+                infoWindow.open(map);
+                map.setCenter(myCenter);
+            }, function() {
+                handleLocationError(true, infoWindow, map.getCenter());
+            });
+        } else {
+            // Browser doesn't support Geolocation
+            handleLocationError(false, infoWindow, map.getCenter());
+        }
+    }
+
+    function handleLocationError(browserHasGeolocation, infoWindow, pos) {
+        infoWindow.setPosition(pos);
+        infoWindow.setContent(browserHasGeolocation ?
+            'Error: The Geolocation service failed.' :
+            'Error: Your browser doesn\'t support geolocation.');
+        infoWindow.open(map);
     }
 
 

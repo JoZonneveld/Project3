@@ -1,3 +1,7 @@
+<div id="content_left">
+    <?php $db->getPark()?>
+</div>
+<div id="content_right"
 <?php
 
 $db->sql = mysqli_query($db->conn, "SELECT id, AreaDesc, Longitude, Latitude FROM park");
@@ -75,3 +79,5 @@ for ($i = 0; $i < count($long); $i++)
         })(marker, i));
     }
 </script>
+</div>
+</body>
