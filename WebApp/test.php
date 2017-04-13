@@ -1,3 +1,5 @@
+
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -10,18 +12,23 @@
 <body>
 <div id="map" style="width:100%;height:400px;"></div>
 
-<script>
-    var locations = [ ];
-</script>
-
-
 <script type="text/javascript">
-    locations.push(['Wijnhaven 107', "51.9171772", "4.4839879", 1])
+
+    var iconBase = 'img/park.png';
+    var locations = [ ];
+
+    locations.push(['home', "51.8969409", "4.5094768", 1]);
+
+    locations.push(['2', "51.9009409", "4.5194768", 3]); //Lat +/- 40.000 Long +/- 100.000
+    locations.push(['3', "51.8929409", "4.5194768", 4]);
+
+    locations.push(['2', "51.9009409", "4.4994768", 3]);
+    locations.push(['3', "51.8929409", "4.4994768", 4]);
 
 
     var map = new google.maps.Map(document.getElementById('map'), {
         zoom: 13,
-        center: new google.maps.LatLng(51.9244201, 4.4777325),
+        center: new google.maps.LatLng(51.8969409, 4.5094768),
         mapTypeId: google.maps.MapTypeId.ROADMAP
     });
 
@@ -32,7 +39,8 @@
     for (i = 0; i < locations.length; i++) {
         marker = new google.maps.Marker({
             position: new google.maps.LatLng(locations[i][1], locations[i][2]),
-            map: map
+            map: map,
+            icon: iconBase
         });
 
         google.maps.event.addListener(marker, 'click', (function(marker, i) {
@@ -43,3 +51,5 @@
         })(marker, i));
     }
 </script>
+</div>
+</body>
