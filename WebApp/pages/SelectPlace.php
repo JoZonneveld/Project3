@@ -37,8 +37,6 @@ else if($kind == "Park")
 
 
 <script>
-    var long1 = "4.4837392";
-    var lat1 = "51.9365139";
 
     var long = "<?php print $long ?>";
     var lat = "<?php print $lat ?>";
