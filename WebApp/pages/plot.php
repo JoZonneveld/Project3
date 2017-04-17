@@ -1,4 +1,4 @@
-<script src="js/plotly-latest.min.js"></script>
+<script src="../js/plotly-latest.min.js"></script>
 
 <?php
 $file = fopen("../img/paal.csv","r");
@@ -67,11 +67,13 @@ fclose($file);
 
 ?>
 
+<h1>Aantal oplaad palen</h1>
+
 <div id="myDiv" style="width: 480px; height: 400px;"><!-- Plotly chart will be drawn inside this DIV --></div>
 <script>
     var data = [
         {
-            x: ['Rotterdam', 'Amsterdam', 'Den-Haag'],
+            x: ['Rotterdam', 'Amsterdam', 'Den Haag'],
             y: [<?= $Rotterdam ?>, <?= $Amsterdam ?>, <?= $DenHaag ?>],
             type: 'bar'
         }

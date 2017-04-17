@@ -23,6 +23,9 @@
                                     <li>
                                         <a href="index.php?page=park">Parkeer garages</a>
                                     </li>
+                                    <li>
+                                        <a href="index.php?page=plot">plot</a>
+                                    </li>
         			            
         			        </ul>
         			    </div>
