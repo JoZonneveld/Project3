@@ -1,48 +1,53 @@
 package Database;
 
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.ResultSet;
-import java.sql.Statement;
+import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.StringJoiner;
 
 public class Main {
 
-    public static void main(String[] args) {
-        Connection c = null;
-        Statement stmt = null;
-        try {
-            Class.forName("org.sqlite.JDBC");
-            c = DriverManager.getConnection("jdbc:sqlite:Official.db");
-            c.setAutoCommit(false);
-            System.out.println("Opened database successfully");
+    public static void printStr(String output)
+    {
+        System.out.println(output);
+    }
 
-            stmt = c.createStatement();
-            ResultSet rs = stmt.executeQuery( "SELECT id, Adres, Longitude, Latitude FROM paal ORDER BY Adres;" );
+    public static void printInt(int output)
+    {
+        System.out.println(output);
+    }
 
-            List<String[]> test = new ArrayList<>();
+    public static void main(String[] args) throws ClassNotFoundException, SQLException {
+        String driverName = "org.gjt.mm.mysql.Driver";
+        Class.forName(driverName);
 
+        String serverName = "localhost";
+        String mydatabase = "project3";
+        String url = "jdbc:mysql://" + serverName + "/" + mydatabase;
 
-            while ( rs.next() ) {
+        String username = "root";
+        String password = "";
+        Connection connection = DriverManager.getConnection(url, username, password);
 
-                String Adres = rs.getString("Adres");
-                double Longitude = rs.getDouble("Longitude");
-                double Latitude = rs.getDouble("Latitude");
-                // schrijf een code die Adres, Longtitude en latitude toevoegd aan de array.
-                test.add(new String[] {Adres, Longitude, Latitude});
+        Statement stmt = connection.createStatement();
+        ResultSet rs = stmt.executeQuery( "SELECT id, Adres, Longitude, Latitude FROM paal ORDER BY Adres;" );
 
-                System.out.println( Adres + " - " + Longitude + " - " + Latitude);
+        while ( rs.next() ) {
+            String Longitude = rs.getString("Longitude");
+            String Latitude = rs.getString("Latitude");
+            //System.out.println(Longitude + " - " + Latitude);
+            String[] parts = Longitude.split("[.]");
+            printStr(parts[1]);
+            int foo = 0;
+            try {
+                foo = Integer.parseInt(parts[0]);
+            } catch (NumberFormatException e) {
+                //No problem this time, but still it is good practice to care about exceptions.
+                //Never trust user input :)
+                //Do something! Anything to handle the exception.
             }
-            System.out.println(test.get(0)[2]);
 
-            rs.close();
-            stmt.close();
-            c.close();
-        } catch ( Exception e ) {
-            System.err.println( e.getClass().getName() + ": " + e.getMessage() );
-            System.exit(0);
+            //printInt(foo);
         }
-        System.out.println("Operation done successfully");
     }
 }

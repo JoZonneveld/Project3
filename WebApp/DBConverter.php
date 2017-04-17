@@ -14,13 +14,15 @@ $db->sql = mysqli_query($db->conn, "SELECT id, Longitude, Latitude FROM paal");
 
 if ($db->sql->num_rows > 0)
 {
+    $max_long = 0;
+    $max_lat = 0;
     while($row = $db->sql->fetch_assoc()) {
         $id = $row['id'];
         $long = $row['Longitude'];
         $lat = $row['Latitude'];
 
-        $test1 = explode(".", $long);
         //change Longitude
+        $test1 = explode(".", $long);
         $output = "";
         for($i = 0; $i < count($test1); $i++)
         {
@@ -30,17 +32,21 @@ if ($db->sql->num_rows > 0)
         $output1 = "";
         for($i = 0; $i < strlen($output); $i++)
         {
-            if($i == 1)
-            {
-                $output1 = $output1 . "." . $output[$i];
-            }
-            else
-            {
-                $output1 = $output1 . $output[$i];
-            }
+//            if($i == 1)
+//            {
+//                $output1 = $output1 . "." . $output[$i];
+//            }
+//            else
+//            {
+//                $output1 = $output1 . $output[$i];
+//            }
+            $output1 = $output1 . $output[$i];
         }
-        print $output1;
-        print " - ";
+        if($max_long < strlen($output))
+        {
+            $max_long = strlen($output);
+        }
+
         //change Lat
         $test1 = explode(".", $lat);
         $output = "";
@@ -52,18 +58,37 @@ if ($db->sql->num_rows > 0)
         $output2 = "";
         for($i = 0; $i < strlen($output); $i++)
         {
-            if($i == 2)
-            {
-                $output2 = $output2 . "." . $output[$i];
-            }
-            else
-            {
-                $output2 = $output2 . $output[$i];
-            }
+//            if($i == 2)
+//            {
+//                $output2 = $output2 . "." . $output[$i];
+//            }
+//            else
+//            {
+//                $output2 = $output2 . $output[$i];
+//            }
+            $output2 = $output2 . $output[$i];
         }
-        print $output2;
+
+        if($max_lat < strlen($output2))
+        {
+            $max_lat = strlen($output2);
+        }
+        //print $output1 . " - " . $output2;
+
+        ?>
+
+        <script>
+            var LongInt = <?= $output1 ?>;
+            var latInt = <?= $output2 ?>;
+        </script>
+
+        <?php
+
+        $longInt = '<script>LongInt</script>';
+        print $longInt;
+
         print "<br>";
-        $sql1 = mysqli_query($db->conn, "UPDATE paal SET Longitude = '$output1', Latitude = '$output2' WHERE id = '$id'");
+        //$sql1 = mysqli_query($db->conn, "UPDATE paal SET LongInt = '$output1', latInt = '$output2' WHERE id = '$id'");
     }
 }
 
