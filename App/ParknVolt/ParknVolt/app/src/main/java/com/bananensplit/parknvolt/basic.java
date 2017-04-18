@@ -4,9 +4,12 @@ import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.webkit.WebSettings;
+import android.webkit.WebView;
 import android.widget.Button;
 
-public class basic extends AppCompatActivity implements View.OnClickListener{
+
+public class basic extends AppCompatActivity implements View.OnClickListener {
 
     Button button;
 
@@ -17,6 +20,13 @@ public class basic extends AppCompatActivity implements View.OnClickListener{
 
         button = (Button) findViewById(R.id.button);
         button.setOnClickListener(this);
+
+        WebView webView = new WebView(this);
+        webView = (WebView) findViewById(R.id.webviewgraph);
+        WebSettings webSettings = webView.getSettings();
+        webSettings.setJavaScriptEnabled(true);
+
+        webView.loadUrl("http://jprojects.eu/project3/maps/plot.php");
     }
 
     @Override

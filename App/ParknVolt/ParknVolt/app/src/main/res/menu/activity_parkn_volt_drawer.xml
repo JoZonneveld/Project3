@@ -13,9 +13,14 @@
                 android:icon="@drawable/car"
                 android:title="Zoek parkeerplaatsen" />
             <item
-                android:id="@+id/charging_points"
-                android:icon="@drawable/ic_charging_point"
-                android:title="Zoek Oplaadpunten" />
+            android:id="@+id/charging_points"
+            android:icon="@drawable/ic_charging_point"
+            android:title="Zoek Oplaadpunten" />
+
+            <item
+                android:id="@+id/graph"
+                android:icon="@drawable/ic_graph"
+                android:title="Grafieken"/>
 
         </menu>
     </item>
