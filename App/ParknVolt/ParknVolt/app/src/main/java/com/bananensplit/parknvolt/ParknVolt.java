@@ -14,14 +14,10 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.webkit.WebSettings;
 import android.webkit.WebView;
-import android.widget.Button;
-import android.widget.TextView;
 
 public class ParknVolt extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 
-    Button button1;
-    TextView result;
     String page = "http://jprojects.eu/project3/maps/all.php";
 
     @Override
@@ -89,6 +85,11 @@ public class ParknVolt extends AppCompatActivity
         webView.loadUrl(page);
     }
 
+    public void onClick(View v) {
+                Intent i = new Intent(this, basic.class);
+                startActivity(i);
+    }
+
     @SuppressWarnings("StatementWithEmptyBody")
     @Override
     public boolean onNavigationItemSelected(MenuItem item) {
@@ -101,10 +102,15 @@ public class ParknVolt extends AppCompatActivity
             getPage("http://jprojects.eu/project3/maps/paal.php");
         } else if (id == R.id.settings) {
             getPage("http://jprojects.eu/project3/maps/all.php");
+        } else if (id == R.id.graph){
+            Intent i = new Intent(this, basic.class);
+            startActivity(i);
         }
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
         return true;
     }
+
+
 }
