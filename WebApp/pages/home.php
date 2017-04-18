@@ -40,7 +40,7 @@ if ($db->sql->num_rows > 0)
     <script src=""></script>
 </head>
 <body>
-<div id="map" style="width:100%;height:400px;"></div>
+<div id="map" style="width:100vw;height:100vh;"></div>
 
 <script>
     var locations = [ ];

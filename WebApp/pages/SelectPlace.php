@@ -29,30 +29,11 @@ else if($kind == "Park")
     $db->getSinglePark($id);
     $long = $db->getLongPark($id);
     $lat = $db->getLatPark($id);
-
-    $testLong = str_replace(".", "", $long);
-    $testLat = str_replace(".", "", $lat);
-
-    ?>
-
-    <script>
-        var longtest = <?php print $testLong ?>;
-        var lattest = <?php print $testLat ?>;
-        document.write(longtest + 100000000);
-    </script>
-
-    <?php
-
-    $minLong    = 0; // - 100.000.000
-    $maxLong    = 0; // + 100.000.000
-
-    $minLat     = 0; // - 40.000.000.000
-    $maxLat     = 0; // + 40.000.000.000
 }
 ?>
 
 
-<div id="map" style="width:100%;height:500px;"></div>
+<div id="map" style=" position:absolute; z-index:-1; width:100vw;height:100vh;"></div>
 
 
 <script>
