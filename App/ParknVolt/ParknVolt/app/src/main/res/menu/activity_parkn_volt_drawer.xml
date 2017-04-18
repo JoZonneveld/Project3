@@ -19,6 +19,7 @@
 
             <item
                 android:id="@+id/graph"
+                android:icon="@drawable/ic_graph"
                 android:title="Grafieken"/>
 
         </menu>
