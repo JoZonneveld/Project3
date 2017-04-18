@@ -29,11 +29,13 @@ else if($kind == "Park")
     $db->getSinglePark($id);
     $long = $db->getLongPark($id);
     $lat = $db->getLatPark($id);
+
+    $db->sql = mysqli_query($db->conn, "SELECT `Adres` FROM `paal` WHERE `Longitude` < 4.5194768 AND `Longitude` > 4.4994768 AND `Latitude` < 51.9009409 AND `Latitude` < 51.8929409");
 }
 ?>
 
 
-<div id="map" style=" position:absolute; z-index:-1; width:100vw;height:100vh;"></div>
+<div id="map" style="width:100vw;height:100vh;"></div>
 
 
 <script>

@@ -33,7 +33,7 @@
         <script src=""></script>
     </head>
     <body>
-    <div id="map" style=" position:absolute; z-index:-1; width:74vw;height:90vh;"></div>
+    <div id="map" style="width:74vw;height:90vh;"></div>
 
     <script>
         var locations = [ ];

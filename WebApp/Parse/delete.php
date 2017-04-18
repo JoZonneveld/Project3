@@ -1,5 +1,5 @@
 <?php
-include 'include/class.php';
+include '../include/class.php';
 $db = new DB();
 
 $db->sql = mysqli_query($db->conn, "SELECT * FROM paal ORDER BY Adres");
