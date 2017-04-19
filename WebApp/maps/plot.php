@@ -23,6 +23,8 @@ $file = fopen("../img/paal.csv","r");
 $Rotterdam = 0;
 $Amsterdam = 0;
 $DenHaag = 0;
+$Utrecht = 0;
+$Eindhoven = 0;
 $adres = [];
 $bool = true;
 
@@ -80,6 +82,42 @@ while (($line = fgetcsv($file)) !== FALSE) {
         $bool = true;
         array_push($adres, $line[2]);
     }
+
+    //count Eindhoven
+    if (strpos($line[2], 'Eindhoven'))
+    {
+        for($i = 0; $i < count($adres); $i++)
+        {
+            if($adres[$i] == $line[2])
+            {
+                $bool = false;
+            }
+        }
+        if($bool)
+        {
+            $Eindhoven++;
+        }
+        $bool = true;
+        array_push($adres, $line[2]);
+    }
+
+    //count Eindhoven
+    if (strpos($line[2], 'Utrecht'))
+    {
+        for($i = 0; $i < count($adres); $i++)
+        {
+            if($adres[$i] == $line[2])
+            {
+                $bool = false;
+            }
+        }
+        if($bool)
+        {
+            $Utrecht++;
+        }
+        $bool = true;
+        array_push($adres, $line[2]);
+    }
 }
 fclose($file);
 
@@ -89,8 +127,8 @@ fclose($file);
 <script>
     var data = [
         {
-            x: ['Rotterdam', 'Amsterdam', 'Den-Haag'],
-            y: [<?= $Rotterdam ?>, <?= $Amsterdam ?>, <?= $DenHaag ?>],
+            x: ['Rotterdam', 'Amsterdam', 'Den Haag', 'Utrecht', 'Eindhoven'],
+            y: [<?= $Rotterdam ?>, <?= $Amsterdam ?>, <?= $DenHaag ?>, <?= $Utrecht ?>, <?= $Eindhoven ?>],
             type: 'bar'
         }
     ];
