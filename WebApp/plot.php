@@ -44,63 +44,101 @@ include("include/menu.php");
         $Rotterdam = 0;
         $Amsterdam = 0;
         $DenHaag = 0;
+        $Utrecht = 0;
+        $Eindhoven = 0;
         $adres = [];
         $bool = true;
 
         while (($line = fgetcsv($file)) !== FALSE) {
         //count Rotterdam
-        if (strpos($line[2], 'Rotterdam'))
-        {
-        for($i = 0; $i < count($adres); $i++)
-        {
-        if($adres[$i] == $line[2])
-        {
-        $bool = false;
-        }
-        }
-        if($bool)
-        {
-        $Rotterdam++;
-        }
-        $bool = true;
-        array_push($adres, $line[2]);
-        }
+            if (strpos($line[2], 'Rotterdam'))
+            {
+                for($i = 0; $i < count($adres); $i++)
+                {
+                    if($adres[$i] == $line[2])
+                    {
+                        $bool = false;
+                    }
+                }
+                if($bool)
+                {
+                    $Rotterdam++;
+                }
+                $bool = true;
+                array_push($adres, $line[2]);
+            }
 
-        //count Amsterdam
-        if (strpos($line[2], 'Amsterdam'))
-        {
-        for($i = 0; $i < count($adres); $i++)
-        {
-        if($adres[$i] == $line[2])
-        {
-        $bool = false;
-        }
-        }
-        if($bool)
-        {
-        $Amsterdam++;
-        }
-        $bool = true;
-        array_push($adres, $line[2]);
-        }
+            //count Amsterdam
+            if (strpos($line[2], 'Amsterdam'))
+            {
+                for($i = 0; $i < count($adres); $i++)
+                {
+                    if($adres[$i] == $line[2])
+                    {
+                        $bool = false;
+                    }
+                }
+                if($bool)
+                {
+                    $Amsterdam++;
+                }
+                $bool = true;
+                array_push($adres, $line[2]);
+            }
 
-        //count Den-Haag
-        if (strpos($line[2], 'Den Haag'))
-        {
-        for($i = 0; $i < count($adres); $i++)
-        {
-        if($adres[$i] == $line[2])
-        {
-        $bool = false;
-        }
-        }
-        if($bool)
-        {
-        $DenHaag++;
-        }
-        $bool = true;
-        array_push($adres, $line[2]);
-        }
+            //count Den-Haag
+            if (strpos($line[2], 'Den Haag'))
+            {
+                for($i = 0; $i < count($adres); $i++)
+                {
+                    if($adres[$i] == $line[2])
+                    {
+                        $bool = false;
+                    }
+                }
+                if($bool)
+                {
+                    $DenHaag++;
+                }
+                $bool = true;
+                array_push($adres, $line[2]);
+            }
+
+            //count Eindhoven
+            if (strpos($line[2], 'Eindhoven'))
+            {
+                for($i = 0; $i < count($adres); $i++)
+                {
+                    if($adres[$i] == $line[2])
+                    {
+                        $bool = false;
+                    }
+                }
+                if($bool)
+                {
+                    $Eindhoven++;
+                }
+                $bool = true;
+                array_push($adres, $line[2]);
+            }
+
+            //count Eindhoven
+            if (strpos($line[2], 'Utrecht'))
+            {
+                for($i = 0; $i < count($adres); $i++)
+                {
+                    if($adres[$i] == $line[2])
+                    {
+                        $bool = false;
+                    }
+                }
+                if($bool)
+                {
+                    $Utrecht++;
+                }
+                $bool = true;
+                array_push($adres, $line[2]);
+            }
         }
         fclose($file);
 
@@ -112,8 +150,8 @@ include("include/menu.php");
         <script>
             var data = [
                 {
-                    x: ['Rotterdam', 'Amsterdam', 'Den-Haag'],
-                    y: [<?= $Rotterdam ?>, <?= $Amsterdam ?>, <?= $DenHaag ?>],
+                    x: ['Rotterdam', 'Amsterdam', 'Den Haag', 'Utrecht', 'Eindhoven'],
+                    y: [<?= $Rotterdam ?>, <?= $Amsterdam ?>, <?= $DenHaag ?>, <?= $Utrecht ?>, <?= $Eindhoven ?>],
                     type: 'bar'
                 }
             ];

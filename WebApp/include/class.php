@@ -15,9 +15,15 @@
 		// Insert Data
 
 		// get Data
-        function getAll()
+        function getArea($Minlong, $Maxlong, $Minlat, $Maxlat)
         {
-
+            $this->sql = mysqli_query($this->conn, "SELECT id, `Longitude`, `Latitude` 
+                                                          FROM `paal` 
+                                                          WHERE LongDou < '$Maxlong' 
+                                                          AND LongDou > '$Minlong'
+                                                          AND LatDou < '$Maxlat'
+                                                          AND LatDou > '$Minlat'");
+            return $this->sql;
         }
 
         function getPaal(){
