@@ -1,7 +1,6 @@
 package com.bananensplit.parknvolt;
 
 import android.content.Intent;
-import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
 import android.support.design.widget.NavigationView;
@@ -18,11 +17,14 @@ import android.webkit.WebView;
 public class ParknVolt extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 
+
+    //Standaard webpagina
     String page = "http://jprojects.eu/project3/maps/all.php";
 
+
+    //Standaard Android Studio methods
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_parkn_volt);
@@ -32,18 +34,13 @@ public class ParknVolt extends AppCompatActivity
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
                 this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
-        drawer.setDrawerListener(toggle);
         toggle.syncState();
 
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
 
-        WebView webView = new WebView(this);
-        webView = (WebView) findViewById(R.id.webview1);
-        WebSettings webSettings = webView.getSettings();
-        webSettings.setJavaScriptEnabled(true);
-
-        webView.loadUrl(page);
+        //Methode om een webpagina te laden
+        getPage(page);
     }
 
     @Override
@@ -58,42 +55,37 @@ public class ParknVolt extends AppCompatActivity
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
         getMenuInflater().inflate(R.menu.parkn_volt, menu);
         return true;
     }
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
         int id = item.getItemId();
-
-        //noinspection SimplifiableIfStatement
-
-
         return super.onOptionsItemSelected(item);
     }
 
     public void getPage(String page) {
+
+        //Maakt een instantie aan van WebView om webpagina's te tonen
         WebView webView = new WebView(this);
+
+        //Ophalen van de bijhorende webview widget
         webView = (WebView) findViewById(R.id.webview1);
+
+        //Ophalen van de standaard instellingen
         WebSettings webSettings = webView.getSettings();
+
+        //Geeft de webview toestemming om JavaScript te laden
         webSettings.setJavaScriptEnabled(true);
 
+        //Laadt een URL
         webView.loadUrl(page);
     }
 
-    public void onClick(View v) {
-                Intent i = new Intent(this, basic.class);
-                startActivity(i);
-    }
-
-    @SuppressWarnings("StatementWithEmptyBody")
+    //Handelt de filters van de map en navigatie van het scherm
     @Override
     public boolean onNavigationItemSelected(MenuItem item) {
-        // Handle navigation view item clicks here.
         int id = item.getItemId();
 
         if (id == R.id.parking) {
@@ -103,7 +95,7 @@ public class ParknVolt extends AppCompatActivity
         } else if (id == R.id.settings) {
             getPage("http://jprojects.eu/project3/maps/all.php");
         } else if (id == R.id.graph){
-            Intent i = new Intent(this, basic.class);
+            Intent i = new Intent(this, graph.class);
             startActivity(i);
         }
 
@@ -111,6 +103,4 @@ public class ParknVolt extends AppCompatActivity
         drawer.closeDrawer(GravityCompat.START);
         return true;
     }
-
-
 }
