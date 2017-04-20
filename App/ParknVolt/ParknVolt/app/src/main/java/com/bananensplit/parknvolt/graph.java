@@ -9,7 +9,7 @@ import android.webkit.WebView;
 import android.widget.Button;
 
 
-public class basic extends AppCompatActivity implements View.OnClickListener {
+public class graph extends AppCompatActivity implements View.OnClickListener {
 
     Button button;
 
@@ -21,19 +21,27 @@ public class basic extends AppCompatActivity implements View.OnClickListener {
         button = (Button) findViewById(R.id.button);
         button.setOnClickListener(this);
 
+        //Maakt een instantie aan van WebView om webpagina's te tonen
         WebView webView = new WebView(this);
+
+        //Ophalen van de bijhorende webview widget
         webView = (WebView) findViewById(R.id.webviewgraph);
+
+        //Ophalen van de standaard instellingen
         WebSettings webSettings = webView.getSettings();
+
+        //Geeft de webview toestemming om JavaScript te laden
         webSettings.setJavaScriptEnabled(true);
 
+        //Laadt een URL
         webView.loadUrl("http://jprojects.eu/project3/maps/plot.php");
     }
 
     @Override
     public void onClick(View v) {
         switch (v.getId()) {
-            case R.id.button:
-                Intent i = new Intent(basic.this, ParknVolt.class);
+            case R.id.button: //Verandert het huidige scherm naar het hoofdscherm
+                Intent i = new Intent(graph.this, ParknVolt.class);
                 startActivity(i);
                 break;
         }
