@@ -1,12 +1,13 @@
 <div id="content_left">
     <?php
-        $db->getPaal();
+        $db->getPaal(); // haalt paal gegevens uit db via class method en zet deze in buttons
     ?>
 </div>
 
 <div id="content_right">
     <?php
 
+    //gegevens palen ophalen voor maps
     $db->sql = mysqli_query($db->conn, "SELECT id, Adres, Longitude, Latitude FROM paal");
 
     if ($db->sql->num_rows > 0)
@@ -55,6 +56,7 @@
     <script type="text/javascript">
 
         var iconBase = 'img/paal1.png';
+
 
 
         var map = new google.maps.Map(document.getElementById('map'), {
