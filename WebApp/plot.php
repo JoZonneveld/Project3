@@ -40,33 +40,36 @@ include("include/menu.php");
 <div id="content">
     <center>
         <?php
-        $file = fopen("img/paal.csv","r");
+        $file = fopen("img/paal.csv","r"); // open csv file
+        // counters
         $Rotterdam = 0;
         $Amsterdam = 0;
         $DenHaag = 0;
         $Utrecht = 0;
         $Eindhoven = 0;
-        $adres = [];
-        $bool = true;
+        $adres = []; // adres array
+        $bool = true; // boolean
 
         while (($line = fgetcsv($file)) !== FALSE) {
         //count Rotterdam
-            if (strpos($line[2], 'Rotterdam'))
+            if (strpos($line[2], 'Rotterdam')) // als adress Rotterdam
             {
-                for($i = 0; $i < count($adres); $i++)
+                for($i = 0; $i < count($adres); $i++) // check of adres nog niet geweest is
                 {
                     if($adres[$i] == $line[2])
                     {
-                        $bool = false;
+                        $bool = false; // als hij niet unique
                     }
                 }
-                if($bool)
+                if($bool) // als hij unique is
                 {
-                    $Rotterdam++;
+                    $Rotterdam++; // counter +1
                 }
-                $bool = true;
-                array_push($adres, $line[2]);
+                $bool = true; // bool terug naar true
+                array_push($adres, $line[2]); // zet Adres in array
             }
+
+            // volgende functies doen precies het zelfde dus gelden bovenstaande comments
 
             //count Amsterdam
             if (strpos($line[2], 'Amsterdam'))

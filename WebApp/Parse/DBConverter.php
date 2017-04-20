@@ -1,10 +1,5 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: Joost
- * Date: 8-4-2017
- * Time: 20:46
- */
+
 include '../include/class.php';
 
 $db = new DB();
@@ -22,32 +17,30 @@ if ($db->sql->num_rows > 0)
         $lat = $row['Latitude'];
 
         //change Longitude
-        $test1 = explode(".", $long);
+        $test1 = explode(".", $long); //Split de Longtitude op een .
         $output = "";
         for($i = 0; $i < count($test1); $i++)
         {
+            //Plak de uit elkaar gehaalde string aan elkaar
             $output = $output . $test1[$i];
         }
 
         $output1 = "";
         for($i = 0; $i < strlen($output); $i++)
         {
-//            if($i == 1)
-//            {
-//                $output1 = $output1 . "." . $output[$i];
-//            }
-//            else
-//            {
-//                $output1 = $output1 . $output[$i];
-//            }
-            $output1 = $output1 . $output[$i];
-        }
-        if($max_long < strlen($output))
-        {
-            $max_long = strlen($output);
+            if($i == 1)
+            {
+                //check of we op punt zijn aangekomen waar een . moet worden neergezet
+                $output1 = $output1 . "." . $output[$i];
+            }
+            else
+            {
+                //Als er geen punt gezet hoeft te worden
+                $output1 = $output1 . $output[$i];
+            }
         }
 
-        //change Lat
+        //change Lat zelfde proces als de change Longtitude
         $test1 = explode(".", $lat);
         $output = "";
         for($i = 0; $i < count($test1); $i++)
@@ -58,37 +51,18 @@ if ($db->sql->num_rows > 0)
         $output2 = "";
         for($i = 0; $i < strlen($output); $i++)
         {
-//            if($i == 2)
-//            {
-//                $output2 = $output2 . "." . $output[$i];
-//            }
-//            else
-//            {
-//                $output2 = $output2 . $output[$i];
-//            }
-            $output2 = $output2 . $output[$i];
+            if($i == 2)
+            {
+                $output2 = $output2 . "." . $output[$i];
+            }
+            else
+            {
+                $output2 = $output2 . $output[$i];
+            }
         }
 
-        if($max_lat < strlen($output2))
-        {
-            $max_lat = strlen($output2);
-        }
-        //print $output1 . " - " . $output2;
-
-        ?>
-
-        <script>
-            var LongInt = <?= $output1 ?>;
-            var latInt = <?= $output2 ?>;
-        </script>
-
-        <?php
-
-        $longInt = '<script>LongInt</script>';
-        print $longInt;
-
-        print "<br>";
-        //$sql1 = mysqli_query($db->conn, "UPDATE paal SET LongInt = '$output1', latInt = '$output2' WHERE id = '$id'");
+        //Nieuwe correcte gegevens in de database aanpassen
+        $sql1 = mysqli_query($db->conn, "UPDATE paal SET LongInt = '$output1', latInt = '$output2' WHERE id = '$id'");
     }
 }
 
